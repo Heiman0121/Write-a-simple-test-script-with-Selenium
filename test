@@ -1,0 +1,30 @@
+package Selen.Pro;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Program Files\\Java\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://www.gmail.com/");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("identifierId")).sendKeys("hei5gjm9@gmail.com");
+		driver.findElement(By.className("")).click();
+		String at = driver.getTitle();
+		String et = "gmail";
+		driver.close();
+		if(at.equalsIgnoreCase(et))
+		{
+			System.out.println("Test Successful");
+		}
+		else
+		{
+			System.out.println("Test Failure");
+		}
+	}
+
+}
